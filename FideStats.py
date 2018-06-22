@@ -24,18 +24,19 @@ Events = {
             "9": "Other Official Events"
 
 }
+
 Categories = {
-                "1": "Top 20 Players",
-                "2": "Top 20 Women",
-                "3": "Top 20 Juniors",
-                "4": "Top 20 Girls"
-             }
+                "1": "Top Players",
+                "2": "Top Women",
+                "3": "Top Juniors",
+                "4": "Top Girls"
+}
 
 Variant = {
            "1": "Standard",
            "2": "Rapid",
            "3": "blitz"
-        }
+}
 
 
 def fide_events(soup, event):
@@ -73,21 +74,19 @@ def tournaments(soup):
     my_data = [data[x:x+5] for x in range(0, len(data),5)]
     print(tabulate(my_data,headers=headers,tablefmt = "fancy_grid"))
 
+
 def ratings(soup):
     """ To get the ratings of top players """
-    data = []
-    my_data =[]
-    headers = ["Rank", "Name"]
-    atags = soup.find_all("a", {"class":"tur"})
-    for count,atag in enumerate(atags,1):
-        if len(data) != 20:
-            data.append([count,atag.text])
-    print(tabulate(data,headers=headers,tablefmt = "fancy_grid"))
+    table = soup.find_all('table')[4]
+    df = pd.read_html(str(table))
+    pretty = tabulate(df[0], headers = 'keys', tablefmt ='fancy_grid')
+    print(pretty)
+
 
 def scrape(url):
     """ To fetch info from the urls """
     response = requests.get(url)
-    soup = BeautifulSoup(response.text , "html.parser")
+    soup = BeautifulSoup(response.content , "lxml")
     return soup
 
 
