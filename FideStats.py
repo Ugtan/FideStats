@@ -79,7 +79,7 @@ def ratings(soup):
     """ To get the ratings of top players """
     table = soup.find_all('table')[4]
     df = pd.read_html(str(table))
-    pretty = tabulate(df[0], headers = 'keys', tablefmt ='fancy_grid')
+    pretty = tabulate(df[0], headers = 'keys', tablefmt ='fancy_grid', showindex ='never')
     print(pretty)
 
 
