@@ -2,7 +2,7 @@
 **FideStats** is a simple Python script to find the Fide Events, Tournaments, and Ratings of one of the top chess players from fide.com and print them in the command line itself.
 
 ## Features
-* FIDE Calender.
+* FIDE Calender - Displaying all the Fide events based on category.
 * Latest Tournaments Registered.
 * Ratings of the World's Top Chess Players.
  All of these within the command line itself
@@ -14,10 +14,9 @@ Run `FideStats.py` with the following option:
 python3 FideStats.py
 ```
 
-## Example
+## Examples
 
- ![alt text](https://github.com/ugtan/FideStats/raw/master/images/example1.png "Example 1")
-
+ ![alt text](https://github.com/ugtan/FideStats/raw/master/images/example.png "Example 1")
  ![alt text](https://github.com/ugtan/FideStats/raw/master/images/example2.png "Example 2")
  ![alt text](https://github.com/ugtan/FideStats/raw/master/images/example3.png "Example 3")
 
