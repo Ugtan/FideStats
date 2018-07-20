@@ -1,5 +1,5 @@
 # FideStats
-**FideStats** is a simple Python script to find the Fide Events, Tournaments, and Ratings of one of the top chess players from fide.com and print them in the command line itself.
+**FideStats** is a Python script to find the Fide Events, Tournaments, and Ratings of one of the top chess players from fide.com and print them in the command line itself. It is basically a fide.com scraper to scrape Events, Tournaments and Ratings the website.
 
 ## Features
 * FIDE Calender - Displaying all the Fide events based on category.
